@@ -38,7 +38,7 @@ const calcTempAmplitudeBug = function (temps1, temps2) {
 
     if (typeof curTemp !== 'number') continue;
 
-    debugger;
+    // debugger;
     if (curTemp > max) {
       max = curTemp;
     }
