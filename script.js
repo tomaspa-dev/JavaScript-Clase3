@@ -25,17 +25,20 @@ const temperatures2 = [-15, 2, 1, -16];
 // - Find min value in temp array
 // - Substract min from max(amplitude) and return it
 
-const calcTempAmplitude = function (temps1, temps2) {
+//Using a debugger
+const calcTempAmplitudeBug = function (temps1, temps2) {
   const temps3 = temps1.concat(temps2);
+  console.log(temps3);
 
-  let max = temps3[0];
-  let min = temps3[0];
+  let max = 0;
+  let min = 0;
 
   for (let i = 0; i < temps3.length; i++) {
     const curTemp = temps3[i];
 
     if (typeof curTemp !== 'number') continue;
 
+    debugger;
     if (curTemp > max) {
       max = curTemp;
     }
@@ -44,10 +47,14 @@ const calcTempAmplitude = function (temps1, temps2) {
     }
   }
   //   console.log(`max ${max} and min ${min}`);
+  console.log(max, min);
   return max - min;
 };
 
-const amplitude = calcTempAmplitude(temperatures, temperatures2);
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
+// A) IDENTIFY
+console.log(amplitudeBug);
+// const amplitudeBug = calcTempAmplitudeBug(temperatures, temperatures2);
 // console.log(amplitude);
 
 // PROBLEM 2:
@@ -66,7 +73,8 @@ const measureKelvin = function () {
     unit: 'celsius',
 
     //C) FIX
-    value: Number(prompt('Degrees celsius:')),
+    // value: Number(prompt('Degrees celsius :')),
+    value: 10,
     //value: prompt('Degrees celsius:'),
   };
 
